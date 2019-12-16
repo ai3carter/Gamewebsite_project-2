@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>The 4 Geekery</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/5.5.0/d3.min.js"></script>
+    <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../../stylesheets.css">
+</head>
+<!-- drop down list -->
+<body>
+
+
+        <div class="container">
+                <div class="row">
+                  <div class="cool-div col-md-12 jumbotron text-center">
+                    <h1>Great Game Adventure Dashboard</h1>
+                    <div class="leroy-div w3-content w3-section" style="max-width:300px">
+                      <h2 class="w3-center"></h2>
+                      <!--<img class="mySlides" src="http://pixelartmaker.com/art/7dd56f5049ccd8c.png", style="max-width: 100%;"> -->
+                      <img class="mySlides" src="http://pixelartmaker.com/art/8d88ed0366c055e.png", style="max-width: 100%;">
+                      <img class="mySlides" src="https://www.trzcacak.rs/myfile/detail/240-2403343_princess-peach-pixel-art-mario-luigi.png", style="max-width: 100%;">
+                    </div>
+
+                    <script>
+                            var myIndex = 0;
+                            carousel();
+                    
+                            function carousel() {
+                              var i;
+                              var x = document.getElementsByClassName("mySlides");
+                              for (i = 0; i < x.length; i++) {
+                                x[i].style.display = "none";
+                              }
+                              myIndex++;
+                              if (myIndex > x.length) {myIndex = 1}
+                              x[myIndex-1].style.display = "block";
+                              setTimeout(carousel, 2000); // Change image every 2 seconds
+                            }
+                            </script>
+                    <!-- inserting the reeling image codes -->
+                     <hr>       
+                    <p>Use the interactive charts below to explore the dataset</p>
+                  </div>
+                </div>                    
+              
+
+                <div class="row">
+                        <div class="col-md-12">
+                          <h3>A detailed graph featuring game franchise </h3>
+                        
+                            
+                                        <section>
+                                        <hr>
+                                          
+                          <div id="myDiv"></div>
+                          <script src="{{ url_for('static', filename='js/sunburst.js') }}"></script>
+                        
+                
+            
+            
+            
+                <script src="{{ url_for('static', filename='js/app1.js') }}"></script>
+
+
+    
+
+    <div id="animate"><img src="https://i.gifer.com/origin/01/01d0e306b2110cc78690210e92c65eae_w200.gif" /></div>
+
+
+
+    <div id="bar"></div>
+    <select id="selDataset" onchange="getData(this.value)">
+        <option value="theme_count">Highest numbers games by theme</option>
+        <option value="genre_rating">Top rated games by genre</option>
+        <option value="similar_games">List of similar games in top 50 games</option>
+
+        <!-- <option value="emoji_name">Emoji Name</option>  -->
+    </select>
+    
+<!-- double curly bracket in flask represents 'value that you can pass into html from
+python -->
+</body>
+</html>

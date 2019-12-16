@@ -1,0 +1,59 @@
+img {
+  height: 150px;
+  width: 150px;
+  display: inline;
+}
+
+.leroy-div {
+  display: flex;
+  border: 5px black solid;
+  margin: 10px;
+  background: lightgray;
+}
+
+.mySlides {
+  display: inline-block;
+}
+
+body {
+  background: rgb(2,0,36);
+  background: linear-gradient(90deg, rgba(2,0,36,1) 43%, rgba(6,87,173,1) 100%, rgba(9,9,121,0.0844712885154062) 100%, rgba(0,212,255,1) 100%);
+}
+
+h1:hover {
+  text-shadow: 2px 2px;
+  transition: text-shadow 0.1s;
+}
+
+.cool-div {
+  border: 4px solid darkblue;
+}
+
+
+p:hover {
+  text-shadow: 2px 2px;
+  transition: text-shadow 0.1s;
+}
+
+.well {
+  width: 20vw;
+  border: 5px solid black;
+}
+
+h3 {
+  font-family: monospace;
+}
+
+select {
+  width: 200px;
+  height: 30px;
+  border: 2px solid purple;
+}
+
+#animate {
+    position: relative;
+    border: 1px solid green;
+    background: yellow;
+    width: 100px;
+    height: 100px;
+}
