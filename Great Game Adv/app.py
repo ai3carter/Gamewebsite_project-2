@@ -1,24 +1,32 @@
 import pandas as pd
 import os
 import numpy as np
+
 import sqlalchemy
 from sqlalchemy.ext.automap import automap_base
 from sqlalchemy.orm import Session
 from sqlalchemy import create_engine
+
 from flask import Flask, jsonify, render_template
 from sqlalchemy.sql import func
 # We'll be using the database, Store our data in our database as opposed to in the array
 from flask_sqlalchemy import SQLAlchemy
+
+
 app = Flask(__name__)
+
 #################################################
 # Database Setup
 #################################################
 game_database_path = "postgres:postgres@localhost:5432/game_db"
 engine = create_engine(f"postgresql://{game_database_path}")
+
 # reflect an existing database into a new model
 Base = automap_base()
 # reflect the tables
 Base.prepare(engine, reflect=True)
+
+
 # Save references to each table
 p= Base.classes.primaryv1
 g = Base.classes.genre
@@ -53,6 +61,7 @@ def similar_game_data():
         filter(ns.rating != None).\
         limit(50).all()
     df = pd.DataFrame(results3, columns=['game','count_of_similar_game', 'rating'])
+
     game = df['game'].values.tolist()
     similar_count = df['count_of_similar_game'].values.tolist()
     rating = df['rating'].values.tolist()
@@ -60,7 +69,8 @@ def similar_game_data():
         'y': similar_count,
         "type":"bar"
         }
-    return jsonify(data2)    
+    return jsonify(data2)   
+
 
 @app.route("/theme_count")
 def theme_counting_data():
@@ -77,6 +87,7 @@ def theme_counting_data():
         "type":"bar"
     }
     return jsonify(data)
+    
 @app.route("/genre_rating")
 def genre_rating_data():
     results = session.query(gr.slug, gr.rating).\
