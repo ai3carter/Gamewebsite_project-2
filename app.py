@@ -1,7 +1,7 @@
 import pandas as pd
 import os
 import numpy as np
-
+import psycopg2
 import sqlalchemy
 from sqlalchemy.ext.automap import automap_base
 from sqlalchemy.orm import Session
@@ -40,6 +40,7 @@ t=Base.classes.theme
 gr=Base.classes.genre_rating
 tr=Base.classes.theme_rating
 sgr=Base.classes.similar_game_name_p
+
 ns=Base.classes.new_simil
 # gmr=Base.classes.gamemode_rating
 # conn = engine.connect()
